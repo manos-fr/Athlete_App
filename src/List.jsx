@@ -8,6 +8,9 @@ import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    [theme.breakpoints.down("xs")]: {
+      display: "none",
+    },
     flexGrow: 1,
     width: "100%",
     maxWidth: 95,
@@ -33,10 +36,16 @@ export default function PinnedSubheaderList() {
   return (
     <Box position="absolute" top={70} left="0.5%">
       <List className={classes.root} subheader={<li />}>
-        {[0, 1].map((sectionId) => (
+        {[0].map((sectionId) => (
           <li key={``} className={classes.listSection}>
             <ul className={classes.ul}>
               <ListSubheader>{` Men`}</ListSubheader>
+              {[0, 1].map((item) => (
+                <ListItem key={1}>
+                  <ListItemText primary={"Category"} />
+                </ListItem>
+              ))}
+              <ListSubheader>{` Women`}</ListSubheader>
               {[0, 1].map((item) => (
                 <ListItem key={1}>
                   <ListItemText primary={"Category"} />

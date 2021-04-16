@@ -11,7 +11,7 @@ import Box from "@material-ui/core/Box";
 
 const TAX_RATE = 0.07;
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   //   breakpoints: {
   //     values: {
   //       tablet: 640,
@@ -20,14 +20,17 @@ const useStyles = makeStyles({
   //     },
   //   },
   tableContainer: {
+    [theme.breakpoints.down("xs")]: {
+      display: "",
+    },
     flexGrow: 1,
-    minWidth: 400,
+    minWidth: 200,
     position: "absolut",
   },
   table: {
     flexGrow: 1,
   },
-});
+}));
 
 function ccyFormat(num) {
   return `${num.toFixed(2)}`;

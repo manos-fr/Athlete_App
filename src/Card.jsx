@@ -17,7 +17,7 @@ const useStyles = makeStyles(({ palette }) => ({
   card: {
     flexGrow: 1,
     width: "70%",
-    minWidth: 400,
+    minWidth: 300,
     borderRadius: 50,
     textAlign: "center",
   },

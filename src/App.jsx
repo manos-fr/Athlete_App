@@ -30,7 +30,7 @@ const columns = [
   {
     id: "Nationality",
     label: "Nationality",
-    minWidth: 50,
+    minWidth: 55,
     align: "right",
     format: (value) => value.toFixed(2),
   },
@@ -51,13 +51,14 @@ const rows = [
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
-    minWidth: 300,
+    minWidth: 200,
     width: "50%",
   },
   container: {
     flexGrow: 1,
-    minWidth: 300,
+    minWidth: 200,
     maxHeight: 300,
+    width: "100%",
   },
 });
 
