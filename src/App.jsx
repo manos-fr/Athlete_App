@@ -50,9 +50,13 @@ const rows = [
 
 const useStyles = makeStyles({
   root: {
+    flexGrow: 1,
+    minWidth: 300,
     width: "50%",
   },
   container: {
+    flexGrow: 1,
+    minWidth: 300,
     maxHeight: 300,
   },
 });
@@ -72,7 +76,7 @@ export default function StickyHeadTable() {
   };
 
   return (
-    <Box position="absolute" top={550} width="80%" left="1%">
+    <Box position="absolute" top={550} width="80%" left="1%" marginRight="20%">
       <Paper className={classes.root}>
         <TableContainer className={classes.container}>
           <Table stickyHeader aria-label="sticky table">

@@ -13,7 +13,9 @@ ReactDOM.render(
     <Card />
     <List />
     <App />
-    <Table />
+    <div>
+      <Table />
+    </div>
   </div>,
   document.getElementById("root")
 );

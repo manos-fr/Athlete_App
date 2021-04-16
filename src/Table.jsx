@@ -7,6 +7,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import Box from "@material-ui/core/Box";
 
 const TAX_RATE = 0.07;
 
@@ -18,16 +19,13 @@ const useStyles = makeStyles({
   //       desktop: 1280,
   //     },
   //   },
-  table: {
-    width: 550,
-    height: 200,
-  },
   tableContainer: {
-    position: "absolute",
-    left: 550,
-    top: 525,
-    width: 580,
-    height: 380,
+    flexGrow: 1,
+    minWidth: 400,
+    position: "absolut",
+  },
+  table: {
+    flexGrow: 1,
   },
 });
 
@@ -62,54 +60,60 @@ export default function SpanningTable() {
   const classes = useStyles();
 
   return (
-    <TableContainer
-      maxWidth="sm"
-      component={Paper}
-      className={classes.tableContainer}
+    <Box
+      position="absolute"
+      marginRight="2%"
+      marginRight="5%"
+      top={473}
+      height="50%"
+      width="50%"
+      left="47%"
     >
-      <Table className={classes.table} aria-label="spanning table">
-        <TableHead>
-          <TableRow>
-            <TableCell align="center" colSpan={3}>
-              Details
-            </TableCell>
-            <TableCell align="right">Tournament</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Desc</TableCell>
-            <TableCell align="right">Matches</TableCell>
-            <TableCell align="right">Minutes</TableCell>
-            <TableCell align="right">Injuries</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.desc}>
-              <TableCell>{row.desc}</TableCell>
-              <TableCell align="right">{row.qty}</TableCell>
-              <TableCell align="right">{row.unit}</TableCell>
-              <TableCell align="right">{ccyFormat(row.price)}</TableCell>
+      <TableContainer component={Paper} className={classes.tableContainer}>
+        <Table className={classes.table} aria-label="spanning table">
+          <TableHead>
+            <TableRow>
+              <TableCell align="center" colSpan={3}>
+                Details
+              </TableCell>
+              <TableCell align="right">Tournament</TableCell>
             </TableRow>
-          ))}
+            <TableRow>
+              <TableCell>Desc</TableCell>
+              <TableCell align="right">Matches</TableCell>
+              <TableCell align="right">Minutes</TableCell>
+              <TableCell align="right">Injuries</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {rows.map((row) => (
+              <TableRow key={row.desc}>
+                <TableCell>{row.desc}</TableCell>
+                <TableCell align="right">{row.qty}</TableCell>
+                <TableCell align="right">{row.unit}</TableCell>
+                <TableCell align="right">{ccyFormat(row.price)}</TableCell>
+              </TableRow>
+            ))}
 
-          <TableRow>
-            <TableCell rowSpan={3} />
-            <TableCell colSpan={2}>Subtotal</TableCell>
-            <TableCell align="right">{ccyFormat(invoiceSubtotal)}</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Consistency</TableCell>
-            <TableCell align="right">{`${(TAX_RATE * 100).toFixed(
-              0
-            )} %`}</TableCell>
-            <TableCell align="right">{ccyFormat(invoiceTaxes)}</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell colSpan={2}>Total</TableCell>
-            <TableCell align="right">{ccyFormat(invoiceTotal)}</TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
-    </TableContainer>
+            <TableRow>
+              <TableCell rowSpan={3} />
+              <TableCell colSpan={2}>Subtotal</TableCell>
+              <TableCell align="right">{ccyFormat(invoiceSubtotal)}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Consistency</TableCell>
+              <TableCell align="right">{`${(TAX_RATE * 100).toFixed(
+                0
+              )} %`}</TableCell>
+              <TableCell align="right">{ccyFormat(invoiceTaxes)}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell colSpan={2}>Total</TableCell>
+              <TableCell align="right">{ccyFormat(invoiceTotal)}</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </Box>
   );
 }

@@ -15,13 +15,14 @@ const theme = {
 
 const useStyles = makeStyles(({ palette }) => ({
   card: {
-    position: "right",
-    width: 600,
+    flexGrow: 1,
+    width: "70%",
+    minWidth: 400,
     borderRadius: 50,
-    minWidth: 255,
     textAlign: "center",
   },
   avatar: {
+    flexGrow: 1,
     width: 60,
     height: 60,
     margin: "auto",
@@ -62,10 +63,15 @@ export const ProfileCardDemo = React.memo(function ProfileCard() {
     height: "50%",
   });
   return (
-    <Box position="absolute" top={80} left="25%">
+    <Box position="absolute" top={80} left="25%" className={styles.card}>
       <Card className={cx(styles.card, shadowStyles.root)} position={"center"}>
         <CardContent>
-          <Avatar className={styles.avatar} src={"https://i.pravatar.cc/300"} />
+          <Avatar
+            className={styles.avatar}
+            src={
+              "https://tennishead.net/wp-content/uploads/2021/02/Stefanos-Tsitsipas-celebrates.jpg"
+            }
+          />
           <h3 className={styles.heading}>Markos Tsitsipas</h3>
           <span className={styles.subheader}>Greece</span>
           <h3 className={styles.statLabel}>markostsitsipas@gmail.com</h3>
