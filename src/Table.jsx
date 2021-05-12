@@ -20,14 +20,17 @@ const useStyles = makeStyles((theme) => ({
   //     },
   //   },
   tableContainer: {
-    [theme.breakpoints.down("xs")]: {
-      display: "",
-    },
     flexGrow: 1,
-    minWidth: 200,
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
+    marginRight: 100,
+    minWidth: 150,
     position: "absolut",
   },
   table: {
+    minWidth: 150,
+
     flexGrow: 1,
   },
 }));
@@ -64,13 +67,13 @@ export default function SpanningTable() {
 
   return (
     <Box
-      position="absolute"
-      marginRight="2%"
-      marginRight="5%"
-      top={473}
+      position="relative"
+      top={472}
       height="50%"
-      width="50%"
-      left="47%"
+      left="63%"
+      width="35%"
+      marginLeft="-5%"
+      marginRight="100%"
     >
       <TableContainer component={Paper} className={classes.tableContainer}>
         <Table className={classes.table} aria-label="spanning table">

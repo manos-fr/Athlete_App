@@ -1,3 +1,9 @@
+### USAGE
+
+- Download or clone the repo
+- You should already have Node.js installed
+- Install the code dependencies with npm install command
+
 ### `npm start`
 
 Runs the app in the development mode.\

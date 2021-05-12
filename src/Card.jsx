@@ -18,6 +18,7 @@ const useStyles = makeStyles(({ palette }) => ({
     flexGrow: 1,
     width: "70%",
     minWidth: 300,
+    maxWidth: 1000,
     borderRadius: 50,
     textAlign: "center",
   },
