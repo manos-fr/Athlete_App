@@ -9,10 +9,6 @@ import Divider from "@material-ui/core/Divider";
 import { useFadedShadowStyles } from "@mui-treasury/styles/shadow/faded";
 import { useGutterBorderedGridStyles } from "@mui-treasury/styles/grid/gutterBordered";
 
-const theme = {
-  spacing: 8,
-};
-
 const useStyles = makeStyles(({ palette }) => ({
   card: {
     flexGrow: 1,

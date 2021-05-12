@@ -8,7 +8,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TablePagination from "@material-ui/core/TablePagination";
 import TableRow from "@material-ui/core/TableRow";
-import Box from "@material-ui/core/Box";
+import { Grid } from "@material-ui/core";
 
 const columns = [
   { id: "name", label: "Name", minWidth: 50 },
@@ -78,7 +78,13 @@ export default function StickyHeadTable() {
   };
 
   return (
-    <Box position="absolute" top={550} width="80%" left="7%" marginLeft="1%">
+    <Grid
+      container
+      spacing={3}
+      direction="row"
+      justify="flex-start"
+      alignItems="flex-start"
+    >
       <Paper className={classes.root}>
         <TableContainer className={classes.container}>
           <Table stickyHeader aria-label="sticky table">
@@ -132,6 +138,6 @@ export default function StickyHeadTable() {
           onChangeRowsPerPage={handleChangeRowsPerPage}
         />
       </Paper>
-    </Box>
+    </Grid>
   );
 }

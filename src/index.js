@@ -1,21 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
-import Button from "./Button";
-import List from "./List";
-import Card from "./Card";
-import Table from "./Table";
+import MainInfo from "./MainInfo";
+import TopBar from "./TopBar";
+import Profile from "./Profile";
+import SecondInfo from "./SecondInfo";
+import OpenMenu from "./OpenMenu";
 import "./index.css";
 
 ReactDOM.render(
   <div>
-    <Button />
-    <Card />
-    <List />
-    <App />
-    <div>
-      <Table />
-    </div>
+    <TopBar />
+    <OpenMenu />
+    <Profile />
+    <SecondInfo />
   </div>,
   document.getElementById("root")
 );
