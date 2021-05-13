@@ -8,14 +8,15 @@ import Avatar from "@material-ui/core/Avatar";
 import Divider from "@material-ui/core/Divider";
 import { useFadedShadowStyles } from "@mui-treasury/styles/shadow/faded";
 import { useGutterBorderedGridStyles } from "@mui-treasury/styles/grid/gutterBordered";
+import { Grid } from "@material-ui/core";
 
 const useStyles = makeStyles(({ palette }) => ({
   card: {
     flexGrow: 1,
-    width: "70%",
-    minWidth: 300,
-    maxWidth: 1000,
-    borderRadius: 50,
+    width: "60%",
+    minWidth: 250,
+    maxWidth: 700,
+    borderRadius: 40,
     textAlign: "center",
   },
   avatar: {
@@ -60,31 +61,36 @@ export const ProfileCardDemo = React.memo(function ProfileCard() {
     height: "50%",
   });
   return (
-    <Box position="absolute" top={80} left="25%" className={styles.card}>
-      <Card className={cx(styles.card, shadowStyles.root)} position={"center"}>
-        <CardContent>
-          <Avatar
-            className={styles.avatar}
-            src={
-              "https://tennishead.net/wp-content/uploads/2021/02/Stefanos-Tsitsipas-celebrates.jpg"
-            }
-          />
-          <h3 className={styles.heading}>Markos Tsitsipas</h3>
-          <span className={styles.subheader}>Greece</span>
-          <h3 className={styles.statLabel}>markostsitsipas@gmail.com</h3>
-        </CardContent>
-        <Divider light />
-        <Box display={"flex"}>
-          <Box p={2} flex={"auto"} className={borderedGridStyles.item}>
-            <p className={styles.statLabel}>Age</p>
-            <p className={styles.statValue}>28</p>
+    <Box position="absolute" top={80} left="10%" className={styles.card}>
+      <Grid container direction="row" justify="center" alignItems="center">
+        <Card
+          className={cx(styles.card, shadowStyles.root)}
+          position={"center"}
+        >
+          <CardContent>
+            <Avatar
+              className={styles.avatar}
+              src={
+                "https://tennishead.net/wp-content/uploads/2021/02/Stefanos-Tsitsipas-celebrates.jpg"
+              }
+            />
+            <h3 className={styles.heading}>Markos Tsitsipas</h3>
+            <span className={styles.subheader}>Greece</span>
+            <h3 className={styles.statLabel}>markostsitsipas@gmail.com</h3>
+          </CardContent>
+          <Divider light />
+          <Box display={"flex"}>
+            <Box p={2} flex={"auto"} className={borderedGridStyles.item}>
+              <p className={styles.statLabel}>Age</p>
+              <p className={styles.statValue}>28</p>
+            </Box>
+            <Box p={2} flex={"auto"} className={borderedGridStyles.item}>
+              <p className={styles.statLabel}>Weight</p>
+              <p className={styles.statValue}>78kg</p>
+            </Box>
           </Box>
-          <Box p={2} flex={"auto"} className={borderedGridStyles.item}>
-            <p className={styles.statLabel}>Weight</p>
-            <p className={styles.statValue}>78kg</p>
-          </Box>
-        </Box>
-      </Card>
+        </Card>
+      </Grid>
     </Box>
   );
 });

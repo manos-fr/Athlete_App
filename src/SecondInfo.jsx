@@ -24,12 +24,16 @@ const useStyles = makeStyles((theme) => ({
   tableContainer: {
     flexGrow: 1,
 
-    marginRight: 100,
-    minWidth: 150,
+    marginRight: 400,
+    marginLeft: 5,
+    minWidth: 100,
+    maxWidth: 800,
+
     position: "absolut",
   },
   table: {
     minWidth: 150,
+    maxWidth: 800,
 
     flexGrow: 1,
   },

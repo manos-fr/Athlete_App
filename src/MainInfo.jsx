@@ -52,14 +52,14 @@ const useStyles = makeStyles({
   root: {
     flexGrow: 1,
     minWidth: 100,
-    maxWidth: 500,
-    width: "100%",
+    maxWidth: 600,
+    width: "98%",
   },
   container: {
     flexGrow: 1,
     minWidth: 100,
     maxHeight: 300,
-    width: "100%",
+    width: "98%",
   },
 });
 
@@ -80,6 +80,7 @@ export default function StickyHeadTable() {
   return (
     <Grid
       container
+      sm={12}
       spacing={3}
       direction="row"
       justify="flex-start"
