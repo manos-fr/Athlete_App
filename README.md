@@ -5,6 +5,11 @@
 - You should already have Node.js installed
 - Install the code dependencies with npm install command
 
+# Description
+
+A responsive SPA using reactJS and MaterialUI for an athlete's statistics and info. 
+To be implemented: user login, save athlete in account, compare athletes. work in progress
+
 ### `npm start`
 
 Runs the app in the development mode.\
