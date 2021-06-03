@@ -1,6 +1,7 @@
 ### USAGE
 
 Deployment in Heroku: ``` https://quiet-fjord-36801.herokuapp.com ```
+(if it doesn't load at the first time try reload once more)
 
 or:
 - Download or clone the repo
