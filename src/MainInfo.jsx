@@ -79,8 +79,9 @@ export default function StickyHeadTable() {
 
   return (
     <Grid
-      container
+      item
       sm={12}
+      container
       spacing={3}
       direction="row"
       justify="flex-start"
