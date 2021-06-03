@@ -41,10 +41,10 @@ function createData(name, Surname, Age, Height, Nationality) {
 }
 
 const rows = [
-  createData("Stef", "Voulg", 31, 1.85, "Greek"),
-  createData("Maria", "Voulg", 50, 1.81, "Albanian"),
-  createData("Evans", "Voulg", 25, 1.87, "Nigerian"),
-  createData("Paul", "Voulg", 30, 1.75, "English"),
+  createData("Stef", "Vans", 31, 1.85, "Greek"),
+  createData("Maria", "Mainar", 50, 1.81, "Albanian"),
+  createData("Evans", "Pathos", 25, 1.87, "Nigerian"),
+  createData("Paul", "Mern", 30, 1.75, "English"),
   createData("Gregory", "Voulg", 31, 1.69, "American"),
 ];
 
