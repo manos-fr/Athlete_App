@@ -1,5 +1,8 @@
 ### USAGE
 
+Deployment in Heroku: ``` https://quiet-fjord-36801.herokuapp.com ```
+
+or:
 - Download or clone the repo
 - Go into the directory
 - You should already have Node.js installed
