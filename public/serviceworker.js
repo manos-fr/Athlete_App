@@ -12,8 +12,27 @@ self.addEventListener("install", (event) => {
   );
 });
 
-// listen to requests
-self.addEventListener("fetch", (event) => {});
+// listen to requests *** Maybe Optional ***
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    caches.match(event.request).then(() => {
+      return fetch(event.request).catch(() => caches.match("offline.html"));
+    })
+  );
+});
 
 // activate sw
-self.addEventListener("activate", (event) => {});
+self.addEventListener("activate", (event) => {
+    const cacheWhitelist =[];
+    cacheWhitelist.push(CACHE_NAME);
+
+    event.waitUntil(
+        caches.keys().then((cacheNames)=> Promise.all(
+            cachNames.map((cacheName)=>{
+                if(!cacheWhitelist.includes(cacheName)){
+                    return caches.delete(cacheName);
+                }
+            })
+        )
+    )
+});
