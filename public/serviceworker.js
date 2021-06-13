@@ -15,6 +15,7 @@ self.addEventListener("install", (event) => {
 // listen to requests *** Maybe Optional ***
 self.addEventListener("fetch", (event) => {
   event.respondWith(
+    // caches.match("%PUBLIC_URL%/offline.html")
     caches.match(event.request).then(() => {
       return fetch(event.request).catch(() => caches.match("offline.html"));
     })
