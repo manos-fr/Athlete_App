@@ -11,7 +11,6 @@ self.addEventListener("install", (event) => {
     })
   );
 });
-
 // listen to requests *** Maybe Optional ***
 self.addEventListener("fetch", (event) => {
   event.respondWith(
