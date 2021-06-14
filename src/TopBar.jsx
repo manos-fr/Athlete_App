@@ -9,14 +9,11 @@ import SearchIcon from "@material-ui/icons/Search";
 import Box from "@material-ui/core/Box";
 import OpenMenu from "./OpenMenu";
 import axios from "axios";
-<<<<<<< HEAD
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
-=======
->>>>>>> 44820c1929c675ecc01662c8edacae5419eee3ad
 
 const useStyles = makeStyles((theme) => ({
   root: {
