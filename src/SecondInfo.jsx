@@ -11,7 +11,7 @@ import { Grid } from "@material-ui/core";
 import MainInfo from "./MainInfo";
 import Box from "@material-ui/core/Box";
 
-const TAX_RATE = 0.07;
+const RATE = 0.07;
 
 const useStyles = makeStyles((theme) => ({
   //   breakpoints: {
@@ -62,9 +62,9 @@ const rows = [
   createRow("Third round", 2, 17.99),
 ];
 
-const invoiceSubtotal = subtotal(rows);
-const invoiceTaxes = TAX_RATE * invoiceSubtotal;
-const invoiceTotal = invoiceTaxes + invoiceSubtotal;
+const Subtotal = subtotal(rows);
+const Percent = RATE * Subtotal;
+const Total = Percent + Subtotal;
 
 export default function SpanningTable() {
   const classes = useStyles();
@@ -118,20 +118,18 @@ export default function SpanningTable() {
                 <TableRow>
                   <TableCell rowSpan={3} />
                   <TableCell colSpan={2}>Subtotal</TableCell>
-                  <TableCell align="right">
-                    {ccyFormat(invoiceSubtotal)}
-                  </TableCell>
+                  <TableCell align="right">{ccyFormat(Subtotal)}</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>Consistency</TableCell>
-                  <TableCell align="right">{`${(TAX_RATE * 100).toFixed(
+                  <TableCell align="right">{`${(RATE * 100).toFixed(
                     0
                   )} %`}</TableCell>
-                  <TableCell align="right">{ccyFormat(invoiceTaxes)}</TableCell>
+                  <TableCell align="right">{ccyFormat(Percent)}</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell colSpan={2}>Total</TableCell>
-                  <TableCell align="right">{ccyFormat(invoiceTotal)}</TableCell>
+                  <TableCell align="right">{ccyFormat(Total)}</TableCell>
                 </TableRow>
               </TableBody>
             </Table>
