@@ -103,6 +103,7 @@ export default function StickyHeadTable() {
     <Grid
       item
       sm={12}
+      marginLeft={1}
       container
       spacing={3}
       direction="row"

@@ -43,12 +43,12 @@ function ccyFormat(num) {
   return `${num.toFixed(2)}`;
 }
 
-function priceRow(qty, unit) {
+function calcRow(qty, unit) {
   return qty * unit;
 }
 
 function createRow(desc, qty, unit) {
-  const price = priceRow(qty, unit);
+  const price = calcRow(qty, unit);
   return { desc, qty, unit, price };
 }
 
