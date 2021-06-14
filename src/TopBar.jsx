@@ -111,16 +111,16 @@ export default function SearchAppBar() {
     />
   ));
 
-  const StyledMenuItem = withStyles((theme) => ({
-    root: {
-      "&:focus": {
-        backgroundColor: theme.palette.action.active,
-        "& .MuiListItemIcon-root, & .MuiListItemText-primary": {
-          color: theme.palette.common.white,
-        },
-      },
-    },
-  }))(MenuItem);
+  // const StyledMenuItem = withStyles((theme) => ({
+  //   root: {
+  //     "&:focus": {
+  //       backgroundColor: theme.palette.action.active,
+  //       "& .MuiListItemIcon-root, & .MuiListItemText-primary": {
+  //         color: theme.palette.common.white,
+  //       },
+  //     },
+  //   },
+  // }))(MenuItem);
 
   useEffect(() => {
     const search = async () => {

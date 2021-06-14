@@ -84,7 +84,7 @@ export default function StickyHeadTable() {
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
-  const [rowPage, addRow] = React.useState(0);
+  // const [rowPage, addRow] = React.useState(0);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -95,15 +95,14 @@ export default function StickyHeadTable() {
     setPage(0);
   };
 
-  const handleAddRow = (event) => {
-    addRow(event.target);
-  };
+  // const handleAddRow = (event) => {
+  //   addRow(event.target);
+  // };
 
   return (
     <Grid
       item
       sm={12}
-      marginLeft={1}
       container
       spacing={3}
       direction="row"
@@ -172,8 +171,7 @@ export default function StickyHeadTable() {
           </Grid>
           <Grid item xs={6}>
             <IconButton
-              rowPage={rowPage}
-              onAddRow={handleAddRow}
+              // onClick={handleAddRow}
               aria-label="add"
               className={classes_b.margin}
             >
