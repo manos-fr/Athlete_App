@@ -9,7 +9,6 @@ import SearchIcon from "@material-ui/icons/Search";
 import Box from "@material-ui/core/Box";
 import OpenMenu from "./OpenMenu";
 import axios from "axios";
-import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -87,45 +86,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SearchAppBar() {
-<<<<<<< HEAD
   const [term, setTerm] = useState("Tennis");
   const [anchorEl, setAnchorEl] = useState(null);
   const [results, setResults] = useState([]);
-=======
-  const [term, setTerm] = useState("programming");
-  const [results, setResults] = useState([]);
-
-  useEffect(() => {
-    const search = async () => {
-      const { data } = await axios.get("https://en.wikipedia.org/w/api.php", {
-        params: {
-          action: "query",
-          list: "search",
-          srsearch: term,
-          utf8: "",
-          origin: "*",
-          format: "json",
-        },
-      });
-      setResults(data.query.search);
-    };
-
-    if (term && !results.length) {
-      search();
-    } else {
-      const timeoutId = setTimeout(() => {
-        if (term) {
-          search();
-        }
-      }, 1000);
-
-      return () => {
-        clearTimeout(timeoutId);
-      };
-    }
-  }, [term]);
-
->>>>>>> 44820c1929c675ecc01662c8edacae5419eee3ad
   const classes = useStyles();
   const StyledMenu = withStyles({
     paper: {
@@ -209,25 +172,6 @@ export default function SearchAppBar() {
     );
   });
 
-  const renderedResults = results.map((result) => {
-    return (
-      <div key={result.pageid} className="item">
-        <div className="right floated content">
-          <a
-            className="ui button"
-            href={`https://en.wikipedia.org?curid=${result.pageid}`}
-          >
-            Go
-          </a>
-        </div>
-        <div className="content">
-          <div className="header">{result.title}</div>
-          {result.snippet}
-        </div>
-      </div>
-    );
-  });
-
   return (
     <div className={classes.root}>
       <Box>
@@ -245,19 +189,6 @@ export default function SearchAppBar() {
               Athlete's Statistics
             </Typography>
             <div className={classes.search}>
-              <div>
-                <div className="ui form">
-                  <div className="field">
-                    <label> Enter Search Term</label>
-                    <input
-                      value={term}
-                      onChange={(e) => setTerm(e.target.value)}
-                      className="input"
-                    />
-                  </div>
-                </div>
-                <div className="ui celled list">{renderedResults}</div>
-              </div>
               <div className={classes.searchIcon}>
                 <SearchIcon />
               </div>
