@@ -2,6 +2,8 @@
 
 Deployment in Heroku: ``` https://quiet-fjord-36801.herokuapp.com ```
 (if it doesn't load at the first time try reload once more)
+*The long delay at the first load of the app,
+is due to Heroku's dyno that sleeps after 30minutes of idle.*
 
 or:
 - Download or clone the repo
